@@ -2,19 +2,20 @@
 @extends('layouts.footer')
 @extends('layouts.sidebar')
 @section('master_wa','menu-open')
+@section('title','Setting')
 {{-- @section('create_master_wa','active') --}}
-@section('body')
-<div class="content-wrapper">
+@section('content')
+{{-- <div class="content-wrapper"> --}}
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Advanced Form</h1>
+                    <h1>@yield('title')</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Advanced Form</li>
+                        <li class="breadcrumb-item active">@yield('title')</li>
                     </ol>
                 </div>
             </div>
@@ -116,4 +117,5 @@
         </div>
         <!-- /.container-fluid -->
     </section>
-</div>
+{{-- </div> --}}
+@endsection

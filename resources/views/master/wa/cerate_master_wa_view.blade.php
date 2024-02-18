@@ -3,22 +3,25 @@
 @extends('layouts.sidebar')
 @section('master_wa','menu-open')
 @section('create_master_wa','active')
-@section('body')
+@section('title','Create Master WA')
+@section('content')
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+{{-- <div class="content-wrapper"> --}}
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0"></h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
+              <h1>
+                  @yield('title')
+              </h1>
+          </div>
+          <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"></li>
-                <li class="breadcrumb-item active"></li>
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active">@yield('title')</li>
               </ol>
-            </div><!-- /.col -->
+          </div>
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
@@ -85,5 +88,7 @@
         </div><!--/. container-fluid -->
     </section>
     <!-- /.content -->
-  </div>
+  {{-- </div> --}}
   <!-- /.content-wrapper -->
+
+@endsection
