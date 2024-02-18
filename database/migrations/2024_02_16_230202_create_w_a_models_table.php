@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('name', 50);
             $table->string('port', 10);
             $table->string('ip', 20);
+            $table->string('phone')->nullable();
+            $table->string('satus')->default('non active');
+            $table->string('desctiption')->nullable();
             $table->string('created_by', 25);
             $table->string('updated_by', 25)->nullable();
             $table->timestamps();

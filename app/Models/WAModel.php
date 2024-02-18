@@ -13,6 +13,9 @@ class WAModel extends Model
         'name',
         'port',
         'ip',
+        'phone',
+        'status',
+        'description',
         'created_by',
         'updated_by'
     ];

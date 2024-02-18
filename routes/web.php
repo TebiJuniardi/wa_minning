@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WAController;
 use Illuminate\Support\Facades\Route;
@@ -44,5 +45,14 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit-master-user/{id}', [UserController::class, 'edit'])->name('edit-master-user');
         Route::post('/update-master-user', [UserController::class, 'update'])->name('update-master-user');
         Route::get('/delete-master-user/{id}', [UserController::class, 'destroy'])->name('delete-master-user');
+    });
+    Route::prefix('proses')->group(function () {
+        // setting
+        Route::get('/setting', [SettingController::class, 'index'])->name('setting-proses');
+        Route::get('/update-setting', [SettingController::class, 'update'])->name('update-setting');
+        //  wa number
+        Route::get('/wa-number-list', [WAController::class, 'wanumberlist'])->name('wa-number-list');
+        Route::post('/wa-number-update/{id}', [WAController::class, 'wanumberupdate'])->name('wa-number-update/{id}');
+        
     });
 });

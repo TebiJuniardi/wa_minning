@@ -119,7 +119,7 @@
           </li>
           <li class="nav-header"><h6>Master</h6></li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="{{route('setting-proses')}}" class="nav-link">
               <i class="nav-icon fas fa-folder-open"></i>
               <p>
                 Setting
@@ -136,7 +136,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                <a href="{{route('wa-number-list')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>WA Number</p>
                 </a>

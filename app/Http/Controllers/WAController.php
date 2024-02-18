@@ -53,4 +53,25 @@ class WAController extends Controller
         Alert::success('Success', 'Data has been updated.')->showConfirmButton('OK');
         return redirect('/master/list-master-wa');
     }
+    
+    public function wanumberlist() {
+        $no = 1;
+        $data_wa = WAModel::all();
+        return view('wa_number\list_wa_number_view', ['data_wa' => $data_wa, 'no' => $no]);
+    }
+    public function wanumberupdate($id,Request $request) {
+        $wa              = WAModel::find($id);
+        $wa->name        = $request->name;
+        $wa->port        = $request->port;
+        $wa->ip          = $request->ip;
+        $wa->phone       = $request->phone;
+        $wa->description = $request->description;
+        $wa->status      = $request->status;
+        $wa->updated_by  = Auth::user()->fullname;
+        $wa->save();
+        Alert::success('Success', 'Data has been updated.')->showConfirmButton('OK');
+        return redirect('/porses/wa-number-list');
+    }
+
+
 }
